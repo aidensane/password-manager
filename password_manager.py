@@ -1,14 +1,18 @@
+
+
 master_pwd = input("What is the master password? ")
 
 
-def view():
+def view():  # function to view saved passwords.
     with open('passwords.txt', 'r') as f:
         for line in f.readlines():
             data = line.rstrip()
-            user, passw = data.split('|')
+            user, password = data.split('|')
+            # splits data into username and password for easier readability.
+            print("User: ", user, "|", "Password: ", password)
 
 
-def add():
+def add():  # function to add a new password.
     name = input("Account name: ")
     pwd = input("Password: ")
 
